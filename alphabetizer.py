@@ -1,20 +1,7 @@
 """
 Alphabetize the words in any .txt file
 """
-def alphabetize(words, pattern, split_lines=False):
-    '''
-    Returns a list of each capitalized word in alphabetical order
-    '''
-    if not split_lines:
-        return list(filter(bool, sorted(map(lambda x: x.capitalize(), words.split(pattern)))))
-    else:
-        return list(filter(bool, sorted(map(lambda x: x.capitalize(), words.splitlines()))))
-
-def join_words(words):
-    '''
-    Joins list of words together separated by a comma and a space
-    '''
-    return ', '.join(words)
+from alphabetizer_functions import alphabetize, join_words
 
 try:
     # Ask the user for the name of the file they wish to alphabetize
