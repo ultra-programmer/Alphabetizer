@@ -6,9 +6,9 @@ def alphabetize(words, pattern, split_lines=False):
     Returns a list of each capitalized word in alphabetical order
     '''
     if not split_lines:
-        return sorted(list(map(lambda x: x.capitalize(), words.split(pattern))))
+        return list(filter(bool, sorted(map(lambda x: x.capitalize(), words.split(pattern)))))
     else:
-        return sorted(list(map(lambda x: x.capitalize(), words.splitlines())))
+        return list(filter(bool, sorted(map(lambda x: x.capitalize(), words.splitlines()))))
 
 def join_words(words):
     '''
@@ -47,7 +47,7 @@ else:
 
     # Create the string to write to either rewrite the text file, or create a new one
     alphabetized_words = join_words(alphabetize(file_contents, pattern, split_on_lines))
-    
+
     # Ask the user if they wish to override existing file or create a new one.
     while 1:
         try:
