@@ -2,7 +2,7 @@
 Define the functions outside of the main program
 so the functions can be imported and reused
 """
-def alphabetize(words, pattern, split_lines=False):
+def alphabetize(words, pattern, split_lines):
     '''
     Returns a list of each capitalized word in alphabetical order
     '''
